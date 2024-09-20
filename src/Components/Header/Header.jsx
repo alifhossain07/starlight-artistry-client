@@ -96,14 +96,15 @@ const Header = () => {
           )}
 
           <div className="avatar">
-            <div className="w-10   rounded-full">
-              {user ? (
-                <img src={user.photoURL} />
-              ) : (
-                <img src="https://i.ibb.co.com/KyWtrr4/avatar.jpg" alt="" />
-              )}
-            </div>
-          </div>
+  <div className="w-10 rounded-full">
+    {user && user.photoURL ? (
+      <img src={user.photoURL} alt="User Avatar" />
+    ) : (
+      <img src="https://i.ibb.co.com/KyWtrr4/avatar.jpg" alt="Default Avatar" />
+    )}
+  </div>
+</div>
+
         </div>
       </div>
     </div>

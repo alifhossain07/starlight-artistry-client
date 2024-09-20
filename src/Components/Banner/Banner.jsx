@@ -76,19 +76,19 @@ const Banner = () => {
             <img src="/assets/images/slider1.jpg" alt="slide_image" />
           </SwiperSlide>
           <SwiperSlide>
+            <img src="/assets/images/slider4.jpg" alt="slide_image" />
+          </SwiperSlide>
+          <SwiperSlide>
             <img src="/assets/images/slider2.jpg" alt="slide_image" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/assets/images/slider6.jpg" alt="slide_image" />
           </SwiperSlide>
           <SwiperSlide>
             <img src="/assets/images/slider3.png" alt="slide_image" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/assets/images/slider4.jpg" alt="slide_image" />
-          </SwiperSlide>
-          <SwiperSlide>
             <img src="/assets/images/slider5.jpg" alt="slide_image" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="/assets/images/slider6.jpg" alt="slide_image" />
           </SwiperSlide>
           <SwiperSlide>
             <img src="/assets/images/slider7.jpg" alt="slide_image" />

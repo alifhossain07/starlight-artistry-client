@@ -6,6 +6,7 @@ import ContactUs from "../Components/ContactUs/ContactUs";
 import All_items from "../Components/All_Items/All_items";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
+import AddItems from "../Components/addItems/addItems";
 
 const routes = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const routes = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
+      {
+        path:"additems",
+        element:<AddItems></AddItems>,
+      }
     ],
   },
 ]);

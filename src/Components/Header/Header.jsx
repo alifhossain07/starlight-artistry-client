@@ -24,6 +24,9 @@ const Header = () => {
       <li className=" font-bold mr-3">
         <NavLink to="/allitems">All Items</NavLink>
       </li>
+      <li className=" font-bold mr-3">
+        <NavLink to="/additems">Add Items</NavLink>
+      </li>
       
     </>
   );

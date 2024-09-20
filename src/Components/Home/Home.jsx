@@ -1,4 +1,5 @@
 import React from 'react';
+import Banner from '../Banner/Banner';
 
 
 
@@ -7,9 +8,9 @@ const Home = () => {
    
 
     return (
-        <div>
-        {/* Slider Section */}
-        <h1>this is home</h1>
+        <div className=''>
+       <Banner></Banner>
+       
         
 
         </div>

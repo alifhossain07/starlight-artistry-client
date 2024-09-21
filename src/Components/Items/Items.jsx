@@ -4,9 +4,57 @@ import { MdDelete } from "react-icons/md";
 import { FaBookmark } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const Items = ({ item }) => {
+const Items = ({ item,allItems, setItems }) => {
   const { _id,name, category, details, price, quantity, photoURL } = item;
+
+  const handleDelete = (_id) => {
+    console.log(_id);
+    Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+    position: 'top',
+    backdrop: 'rgba(0, 0, 0, 0.5)', // Optional: dim the background
+    willOpen: () => {
+      const swalContainer = Swal.getContainer();
+      swalContainer.classList.add('z-50'); // Use Tailwind class for higher z-index
+    },
+    }).then((result) => {
+      if (result.isConfirmed) {
+       
+       
+        fetch(`http://localhost:5000/craftItem/${_id}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ _id }),
+        })
+         .then((res) => res.json())
+         .then((data) => {
+            
+            
+            console.log(data)
+            if(data.deletedCount > 0) {
+                 Swal.fire({
+          title: "Deleted!",
+          text: "Your Item has been deleted.",
+          icon: "success",
+        });
+        const remaining = allItems.filter(itms => itms._id !== _id);
+          setItems(remaining);
+                
+        }})
+         
+      }
+    });
+  };
 
   // State for managing the currently active item in the modal
   const [selectedItem, setSelectedItem] = useState(null);
@@ -47,7 +95,7 @@ const Items = ({ item }) => {
             {selectedItem && (
               <dialog
                 id="my_modal_5"
-                className="modal modal-bottom sm:modal-middle"
+                className="modal modal-bottom sm:modal-middle z-10"
               >
                 <div className="modal-box">
                   <img
@@ -73,7 +121,7 @@ const Items = ({ item }) => {
                       </button>
                     </Link>
 
-                    <button className="btn bg-[#705656] hover:bg-[#736161] text-white text-xl ">
+                    <button onClick={ ()=>handleDelete(_id)} className="btn bg-[#705656] hover:bg-[#736161] text-white text-xl ">
                       <MdDelete />
                     </button>
                     <button className="btn bg-[#705656] hover:bg-[#736161] text-white text-xl ">

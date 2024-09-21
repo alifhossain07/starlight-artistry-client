@@ -4,6 +4,7 @@ import Items from "../Items/Items";
 
 const All_items = () => {
   const items = useLoaderData();
+  const [allItems,setItems] = useState(items);
   
   // State to track the selected category
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -52,7 +53,7 @@ const All_items = () => {
       {/* Display filtered items */}
       <div className="w-10/12 gap-10 grid grid-cols-3 mx-auto mt-20">
         {filteredItems.length > 0 ? (
-          filteredItems.map((item) => <Items key={item._id} item={item} />)
+          filteredItems.map((item) => <Items key={item._id} item={item} allItems={allItems} setItems={setItems} />)
         ) : (
           <p className="col-span-3 text-center text-xl">No items found for this category</p>
         )}

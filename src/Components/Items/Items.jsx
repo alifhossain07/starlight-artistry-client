@@ -10,6 +10,7 @@ const Items = ({ item,allItems, setItems }) => {
   const { _id,name, category, details, price, quantity, photoURL } = item;
 
   const handleDelete = (_id) => {
+    setSelectedItem(null);
     console.log(_id);
     Swal.fire({
     title: "Are you sure?",
@@ -19,7 +20,8 @@ const Items = ({ item,allItems, setItems }) => {
     confirmButtonColor: "#3085d6",
     cancelButtonColor: "#d33",
     confirmButtonText: "Yes, delete it!",
-    position: 'top',
+    position: 'center',
+    
     backdrop: 'rgba(0, 0, 0, 0.5)', // Optional: dim the background
     willOpen: () => {
       const swalContainer = Swal.getContainer();
@@ -47,8 +49,10 @@ const Items = ({ item,allItems, setItems }) => {
           text: "Your Item has been deleted.",
           icon: "success",
         });
-        const remaining = allItems.filter(itms => itms._id !== _id);
-          setItems(remaining);
+        setSelectedItem(null);
+        const remaining = allItems.filter((itm) => itm._id !== _id);
+        console.log("Remaining items after delete:", remaining);
+        setItems(remaining);
                 
         }})
          

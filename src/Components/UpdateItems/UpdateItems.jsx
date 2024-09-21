@@ -1,13 +1,17 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthProvider";
 
-const AddItems = () => {
+const UpdateItems = () => {
 
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
+    
+    const items = useLoaderData();
+    console.log(items);
+    const {_id,name,category,details,price,quantity,photoURL,email} = items;
 
-  const handleAddItems = (event) => {
+  const handleUpdateItems = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
@@ -32,8 +36,8 @@ const AddItems = () => {
     console.log(CraftInfo);
 
     // send data To the Server
-    fetch("http://localhost:5000/craftItem", {
-      method: "POST",
+    fetch(`http://localhost:5000/craftItem/${_id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -42,10 +46,10 @@ const AddItems = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
-            text: "User Added Successfully! ",
+            text: "Product Information Updated Successfully! ",
             icon: "success",
             confirmButtonText: "Cool",
           });
@@ -56,11 +60,11 @@ const AddItems = () => {
   return (
     <div>
       <h1 className="text-center mt-10 text-3xl font-bold text-[#674636]">
-        Add Coffee
+        Update Item
       </h1>
       <div className="p-20 w-2/4 mx-auto">
         <form
-          onSubmit={handleAddItems}
+          onSubmit={handleUpdateItems}
           className="space-y-4 bg-[#fae9d7]  rounded-xl p-10 "
         >
           <div className="flex flex-col gap-4 justify-between">
@@ -72,6 +76,7 @@ const AddItems = () => {
                 <input
                   type="text"
                   placeholder="Enter Product Name"
+                  defaultValue={name}
                   name="name"
                   class="w-full input input-bordered"
                 />
@@ -84,6 +89,7 @@ const AddItems = () => {
                   type="text"
                   placeholder="Product category"
                   name="category"
+                  defaultValue={category}
                   class="w-full input input-bordered"
                 />
               </div>
@@ -95,6 +101,7 @@ const AddItems = () => {
                   type="text"
                   placeholder="Enter Product Details"
                   name="details"
+                  defaultValue={details}
                   class="w-full input input-bordered"
                 />
               </div>
@@ -110,6 +117,7 @@ const AddItems = () => {
                   type="number"
                   placeholder="Item Price"
                   name="price"
+                  defaultValue={price}
                   class="w-full input input-bordered"
                 />
               </div>
@@ -121,6 +129,7 @@ const AddItems = () => {
                   type="number"
                   placeholder="Amount"
                   name="quantity"
+                  defaultValue={quantity}
                   class="w-full input input-bordered"
                 />
               </div>
@@ -137,6 +146,7 @@ const AddItems = () => {
                 type="text"
                 placeholder="Enter Photo URL"
                 name="photourl"
+                defaultValue={photoURL}
                 class="w-full input input-bordered"
               />
             </div>
@@ -157,7 +167,7 @@ const AddItems = () => {
 
           <input
             type="submit"
-            value="Add Item"
+            value="Update Item"
             className="btn w-full text-xl bg-amber-900 hover:bg-amber-700 duration-300 text-white "
           />
         </form>
@@ -172,4 +182,4 @@ const AddItems = () => {
   );
 };
 
-export default AddItems;
+export default UpdateItems;

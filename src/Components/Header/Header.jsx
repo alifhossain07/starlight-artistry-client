@@ -4,6 +4,10 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+
+  // Log user data to check if photoURL is available
+  console.log(user);
+
   const handleLogOut = () => {
     logOut()
       .then(() => console.log("User Log Out"))
@@ -12,28 +16,27 @@ const Header = () => {
 
   const navLinks = (
     <>
-      <li className=" font-bold mr-3">
+      <li className="font-bold mr-3">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li className=" font-bold mr-3">
+      <li className="font-bold mr-3">
         <NavLink to="/about">About</NavLink>
       </li>
-      <li className=" font-bold mr-3">
+      <li className="font-bold mr-3">
         <NavLink to="/contactus">Contact Us</NavLink>
       </li>
-      <li className=" font-bold mr-3">
+      <li className="font-bold mr-3">
         <NavLink to="/allitems">All Items</NavLink>
       </li>
-      <li className=" font-bold mr-3">
+      <li className="font-bold mr-3">
         <NavLink to="/additems">Add Items</NavLink>
       </li>
-      
     </>
   );
 
   return (
     <div>
-      <div className="navbar bg-gradient-to-r from-[#FFF0D1] to-[#795757]     p-1 shadow-lg">
+      <div className="navbar bg-gradient-to-r from-[#FFF0D1] to-[#795757] p-1 shadow-lg">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -64,9 +67,9 @@ const Header = () => {
               CreativeEvent Solutions
             </h1>
             <img
-              className="w-7/12 ml-3 h-10/12 mt-1 hidden lg:block "
+              className="w-7/12 ml-3 h-10/12 mt-1 hidden lg:block"
               src="https://i.ibb.co.com/cFqgfGr/logo2.png"
-              alt=""
+              alt="Logo"
             />
           </div>
         </div>
@@ -77,12 +80,10 @@ const Header = () => {
           </ul>
         </div>
 
-        {/* Avatar annd Login Button */}
-
-        <div className="navbar-end flex ">
+        {/* Avatar and Login/Logout Button */}
+        <div className="navbar-end flex">
           {user ? (
             <>
-              <span></span>
               <button
                 onClick={handleLogOut}
                 className="text-sm font-semibold bg-white px-2 py-1 lg:py-2 rounded-xl lg:px-10 hover:bg-sky-500 hover:text-gray-200 hover:border hover:border-white duration-200 mr-4"
@@ -99,15 +100,17 @@ const Header = () => {
           )}
 
           <div className="avatar">
-  <div className="w-10 rounded-full">
-    {user && user.photoURL ? (
-      <img src={user.photoURL} alt="User Avatar" />
-    ) : (
-      <img src="https://i.ibb.co.com/KyWtrr4/avatar.jpg" alt="Default Avatar" />
-    )}
-  </div>
-</div>
-
+            <div className="w-10 rounded-full">
+              {user && user.photoURL ? (
+                <img src={user.photoURL} alt="User Avatar" />
+              ) : (
+                <img
+                  src="https://i.ibb.co/KyWtrr4/avatar.jpg"
+                  alt="Default Avatar"
+                />
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@ const FeaturedItems = ({items}) => {
       {/* Added Cards */}
       <div className="w-10/12 gap-10 grid grid-cols-3 mx-auto  mt-10">
       {
-        items.map(item => <Items item={item}></Items>)
+        items.slice(0,6).map(item => <Items item={item}></Items>)
       }
 
       </div>

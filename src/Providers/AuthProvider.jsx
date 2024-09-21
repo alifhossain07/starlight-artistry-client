@@ -1,19 +1,23 @@
 import { createContext, useEffect, useState } from "react";
-import { 
-  createUserWithEmailAndPassword, 
-  getAuth, 
-  onAuthStateChanged, 
-  signInWithEmailAndPassword, 
-  signOut, 
-  GoogleAuthProvider, 
-  signInWithPopup 
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+  GoogleAuthProvider,
+  signInWithPopup
 } from "firebase/auth";
 import app from "../Firebase/firebase.config";
 
 export const AuthContext = createContext(null);
 
 const auth = getAuth(app);
+
+// Adding Google Scopes to ensure profile info is fetched
 const googleProvider = new GoogleAuthProvider();
+googleProvider.addScope('profile');
+googleProvider.addScope('email');
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -46,6 +50,17 @@ const AuthProvider = ({ children }) => {
   // Listen to auth state changes
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        // Log the entire user object to check if photoURL is present
+        console.log('Current User:', currentUser);
+
+        // Specifically check if the photoURL is available
+        if (currentUser.photoURL) {
+          console.log('User photo URL:', currentUser.photoURL);
+        } else {
+          console.log('No photo URL for the user.');
+        }
+      }
       setUser(currentUser);
       setLoading(false);
     });

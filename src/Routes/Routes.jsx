@@ -7,6 +7,7 @@ import All_items from "../Components/All_Items/All_items";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
 import AddItems from "../Components/addItems/addItems";
+import UpdateItems from "../Components/UpdateItems/UpdateItems";
 
 const routes = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const routes = createBrowserRouter([
       {
         path: "/allitems",
         element: <All_items></All_items>,
+        loader: () => fetch('http://localhost:5000/craftItem'),
       },
       {
         path: "/login",
@@ -41,6 +43,11 @@ const routes = createBrowserRouter([
       {
         path:"additems",
         element:<AddItems></AddItems>,
+      },
+      {
+        path:"updateitems/:id",
+        element: <UpdateItems></UpdateItems>,
+        loader: ({params}) => fetch(`http://localhost:5000/craftItem/${params.id}`)
       }
     ],
   },

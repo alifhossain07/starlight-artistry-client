@@ -24,10 +24,10 @@ const Banner = () => {
   };
 
   return (
-    <div className="lg:grid py-10 bg-[#f7f5f1]  lg:grid-cols-2 gap-4 items-center  ">
+    <div className="lg:grid flex flex-col py-10 bg-[#f7f5f1]  lg:grid-cols-2 gap-4 items-center  ">
       {/* Intro Banner */}
       <div className="p-2 space-y-8 ml-16 w-full ">
-        <div className="text-4xl text-[#674636] font-mont font-bold mb-2">
+        <div className="lg:text-4xl text-2xl text-[#674636] font-mont font-bold mb-2">
           <Typewriter
             words={['Handcrafted Wonders, Made for You']}
             loop={5}

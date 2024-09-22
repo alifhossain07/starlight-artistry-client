@@ -43,16 +43,9 @@ const Header = () => {
       <li className="font-bold mr-3">
         <NavLink to="/contactus">Contact Us</NavLink>
       </li>
+
      
-      <li ref={dropdownRef} className="relative">
-        <button
-          className="font-bold uppercase cursor-pointer"
-          onClick={toggleDropdown}
-        >
-          Items <IoMdArrowDropdown />
-        </button>
-        {isDropdownOpen && (
-          <ul className="absolute bg-[#e7ecdd] rounded-none lg:mt-14 mt-0 w-52  text-[#674636] shadow-lg z-50 p-2">
+       
             <li className="font-bold mr-3">
               <NavLink to="/allitems">All Items</NavLink>
             </li>
@@ -62,9 +55,8 @@ const Header = () => {
             <li className="font-bold mr-3">
               <NavLink to="/myitems">My Items</NavLink>
             </li>
-          </ul>
-        )}
-      </li>
+          
+      
     </>
   );
 
@@ -91,7 +83,7 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-[#fff8e8] rounded-box z-50 mt-5 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-[#fff8e8] rounded-box z-50 mt-6 w-52 p-2 shadow"
             >
               {navLinks}
             </ul>

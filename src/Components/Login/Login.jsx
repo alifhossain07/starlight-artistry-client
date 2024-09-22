@@ -42,7 +42,7 @@ const Login = () => {
   };
 
   return (
-    <div className="mt-20">
+    <div className="mt-20 mb-10">
       <div className="hero">
         <div className="hero-content flex-col lg:flex">
           <div className="text-center lg:text-left">

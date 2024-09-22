@@ -31,7 +31,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="mb-10">
       <div>
         <div className="mt-20">
           <div className="hero  ">

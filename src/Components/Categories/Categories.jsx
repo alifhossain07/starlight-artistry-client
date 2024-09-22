@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Categories = () => {
   return (
     <section className="py-20 bg-[#f7f5f1]">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="lg:text-3xl text-2xl font-bold font-mont text-[#674636] mb-12 uppercase">Explore Our Categories</h2>
+        <h2 data-aos="fade-in" className="lg:text-3xl text-2xl font-bold font-mont text-[#674636] mb-12 uppercase">Explore Our Categories</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 w-10/12 mx-auto gap-10">
           {/* Paper Craft Card */}

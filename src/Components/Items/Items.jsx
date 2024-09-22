@@ -15,7 +15,7 @@ const Items = ({ item, allItems, setItems }) => {
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#705656",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
@@ -25,7 +25,6 @@ const Items = ({ item, allItems, setItems }) => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ _id }),
         })
           .then((res) => res.json())
           .then((data) => {
@@ -72,7 +71,7 @@ const Items = ({ item, allItems, setItems }) => {
           <img className="lg:h-80 h-52 w-full" src={photoURL} alt={name} />
         </figure>
         <div className="card-body space-y-2">
-          <h2 className="card-title  text-xl lg:text-2xl">{name}</h2>
+          <h2 className="card-title text-xl lg:text-2xl">{name}</h2>
           <p className="text-lg font-lora">{category}</p>
           <p className="text-lg">
             <strong>${price}</strong>
@@ -97,19 +96,35 @@ const Items = ({ item, allItems, setItems }) => {
 
                   <div className="modal-action">
                     <Link to={`/updateitems/${_id}`}>
-                      <button className="btn bg-[#705656] hover:bg-[#736161] text-white text-xl">
+                      <button 
+                        className="btn bg-[#705656] hover:bg-[#736161] text-white text-xl" 
+                        title="Update Item"
+                      >
                         <FaEdit />
                       </button>
                     </Link>
 
-                    <button onClick={() => handleDelete(_id)} className="btn bg-[#705656] hover:bg-[#736161] text-white text-xl">
+                    <button 
+                      onClick={() => handleDelete(_id)} 
+                      className="btn bg-[#705656] hover:bg-[#736161] text-white text-xl" 
+                      title="Delete Item"
+                    >
                       <MdDelete />
                     </button>
-                    <button onClick={() => handleBookmark(selectedItem)} className="btn bg-[#705656] hover:bg-[#736161] text-white text-xl">
+                    
+                    <button 
+                      onClick={() => handleBookmark(selectedItem)} 
+                      className="btn bg-[#705656] hover:bg-[#736161] text-white text-xl" 
+                      title="Bookmark Item"
+                    >
                       <FaBookmark />
                     </button>
 
-                    <button className="btn bg-[#705656] hover:bg-[#736161] text-white text-xl" onClick={() => setSelectedItem(null)}>
+                    <button 
+                      className="btn bg-[#705656] hover:bg-[#736161] text-white text-xl" 
+                      onClick={() => setSelectedItem(null)} 
+                      title="Close"
+                    >
                       <AiOutlineClose />
                     </button>
                   </div>

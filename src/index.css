@@ -60,11 +60,6 @@ html {
 .swiper-pagination .swiper-pagination-bullet-active {
   background-color: rgb(255, 136, 0);
 }
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Montserrat:wght@400;600;700;800&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 .font-mont {
   font-family: "Montserrat", sans-serif;

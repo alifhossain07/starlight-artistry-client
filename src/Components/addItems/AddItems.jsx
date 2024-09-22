@@ -54,11 +54,11 @@ const AddItems = () => {
   };
 
   return (
-    <div>
-      <h1 className="text-center mt-10 text-3xl font-bold text-[#674636]">
-        Add Coffee
+    <div className="font-mont">
+      <h1 className="text-center mt-10 font-mont text-2xl uppercase lg:text-3xl font-bold text-[#674636]">
+        Add Item
       </h1>
-      <div className="p-20 w-2/4 mx-auto">
+      <div className="lg:p-20 p-8 lg:w-2/4 mx-auto">
         <form
           onSubmit={handleAddItems}
           className="space-y-4 bg-[#fae9d7]  rounded-xl p-10 "
@@ -158,13 +158,13 @@ const AddItems = () => {
           <input
             type="submit"
             value="Add Item"
-            className="btn w-full text-xl bg-amber-900 hover:bg-amber-700 duration-300 text-white "
+            className="btn w-full text-lg lg:text-xl bg-amber-900 hover:bg-amber-700 duration-300 text-white "
           />
         </form>
       </div>
 
       <Link to="/">
-        <div className="text-center">
+        <div className="text-center mb-10">
           <button className="btn">Go To Home</button>
         </div>
       </Link>

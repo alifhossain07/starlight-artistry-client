@@ -58,11 +58,11 @@ const UpdateItems = () => {
   };
 
   return (
-    <div>
-      <h1 className="text-center mt-10 text-3xl font-bold text-[#674636]">
+    <div className="font-mont mb-10">
+      <h1 className="text-center mt-10 lg:text-3xl text-2xl font-bold text-[#674636]">
         Update Item
       </h1>
-      <div className="p-20 w-2/4 mx-auto">
+      <div className="lg:p-20 p-10 lg:w-2/4 mx-auto">
         <form
           onSubmit={handleUpdateItems}
           className="space-y-4 bg-[#fae9d7]  rounded-xl p-10 "

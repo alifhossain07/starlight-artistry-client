@@ -33,6 +33,11 @@ const routes = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/craftItem'),
       },
       {
+        path: "/all-items/:category",
+        element: <All_items></All_items>,
+        loader: () => fetch('http://localhost:5000/craftItem'),
+      },
+      {
         path: "/login",
         element: <Login></Login>,
       },

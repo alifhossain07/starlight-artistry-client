@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import Items from "../Items/Items";
 
 const All_items = () => {
   const items = useLoaderData();
-  const [allItems,setItems] = useState(items);
+  const [allItems, setItems] = useState(items);
   
+  // Get the selected category from the URL parameters
+  const { category } = useParams();
+
   // State to track the selected category
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState(category || "All");
 
   // Function to filter items based on selected category
   const filteredItems = items.filter((item) => {
@@ -46,7 +49,6 @@ const All_items = () => {
           >
             Glass Arts
           </button>
-          
         </div>
       </div>
 

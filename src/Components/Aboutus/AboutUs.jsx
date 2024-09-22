@@ -79,7 +79,7 @@ const AboutUs = () => {
           <h2 className="text-4xl font-bold mb-16 text-center text-[#674636] font-mont uppercase">
             Our Craft Specialties
           </h2>
-          <div className="grid w-10/12 mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid w-11/12 mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             <div className="p-8 bg-[#fff8e8] rounded-lg shadow-lg transform hover:scale-105 transition-transform">
               <h3
                 className="text-2xl text-[#674636]

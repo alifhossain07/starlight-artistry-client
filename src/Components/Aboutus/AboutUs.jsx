@@ -24,20 +24,20 @@ const AboutUs = () => {
     <section className="relative ">
       {/* Welcome Section */}
       <div
-        className="relative h-[34rem] text-white py-20 px-6 lg:px-16 text-center bg-cover bg-center"
+        className="relative lg:h-[34rem] text-white py-20   lg:px-16 text-center bg-cover bg-center"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url('https://i.ibb.co.com/WDgbqtk/glass-Art-Banner.jpg')",
         }}
       >
-        <div className="max-w-5xl mx-auto mt-14 p-10 rounded-lg">
+        <div className="lg:max-w-5xl mx-auto lg:mt-14 p-10 rounded-lg">
           <h1
-            className="text-5xl uppercase font-mont text-[#ffeac5]
- font-extrabold leading-tight"
+            className="text-2xl lg:text-5xl uppercase font-mont text-[#f1c67c]
+ font-bold lg:leading-tight"
           >
             Welcome to Starlight Artistry
           </h1>
-          <p className="text-2xl font-lora text-[#f7eed3] mt-6 max-w-3xl mx-auto">
+          <p className="text-xl lg:text-2xl font-lora text-[#e5d5a2] mt-6 max-w-3xl mx-auto">
             Where Creativity Meets Craftsmanship. Explore the world of paper and
             glass art, where your imagination comes to life.
           </p>
@@ -46,16 +46,16 @@ const AboutUs = () => {
 
       {/* Our Story Section */}
       <div className=" py-20 ">
-        <div className=" flex justify-around w-9/12 mx-auto gap-10 items-center ">
+        <div className=" flex flex-col lg:flex-row justify-around w-9/12 mx-auto gap-10 items-center ">
           <div className=" ">
             <h2
-              className="text-4xl font-bold text-[#674636]
+              className="text-2xl lg:text-3xl font-bold text-[#674636]
  font-mont uppercase"
             >
               Our Story
             </h2>
             <p
-              className="mt-10 text-xl font-lora text-[#928360]
+              className="mt-10 text-lg lg:text-xl font-lora text-[#928360]
 "
             >
               Starlight Artistry began as a dream to turn ordinary materials
@@ -63,7 +63,7 @@ const AboutUs = () => {
               minds and bring beautiful art into homes across the globe.
             </p>
           </div>
-          <div className=" w-5/6">
+          <div className=" lg:w-5/6">
             <img
               src="https://i.ibb.co.com/0f6PR22/craftingstory.jpg"
               alt="Our Story Image"
@@ -76,7 +76,7 @@ const AboutUs = () => {
       {/* Our Craft Specialties Section */}
       <div className="relative bg-[#f7f5f1] text-white py-20 px-6 lg:px-16">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-16 text-center text-[#674636] font-mont uppercase">
+          <h2 className="lg:text-3xl text-2xl font-bold mb-16 text-center text-[#674636] font-mont uppercase">
             Our Craft Specialties
           </h2>
           <div className="grid w-11/12 mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -136,19 +136,19 @@ const AboutUs = () => {
 
       {/* Meet the Artist Section */}
       <div className="py-20">
-        <div className=" flex w-9/12 mx-auto justify-between items-center">
+        <div className=" flex gap-12 lg:gap-0 flex-col-reverse lg:flex-row w-9/12 mx-auto justify-between items-center">
           <div className="">
             <img
               src="https://i.ibb.co.com/tsRGYjt/artist.jpg"
               alt="Artist"
-              className=" h-96 w-96 rounded-full border-4 border-amber-600 object-cover mx-auto lg:mx-0"
+              className=" h-72 w-72 lg:h-96 lg:w-96 rounded-full border-4 border-amber-600 object-cover mx-auto lg:mx-0"
             />
           </div>
-          <div className="w-1/2 space-y-8">
-            <h2 className="text-4xl font-mont font-bold uppercase text-[#674636]">
+          <div className="lg:w-1/2 space-y-8">
+            <h2 className="lg:text-3xl text-2xl font-mont font-bold uppercase text-[#674636]">
               Meet the Artist
             </h2>
-            <p className=" text-xl font-lora text-[#928360]">
+            <p className=" lg:text-xl text-lg font-lora text-[#928360]">
               Hi! I’m the creative force behind Starlight Artistry. Every piece
               in the store is a labor of love, made by hand with care and a deep
               passion for the art. Each item is unique, just like you!
@@ -162,16 +162,16 @@ const AboutUs = () => {
       {/* Testimonials */}
       <section className="py-20 bg-[#f7f5f1]  mx-auto   ">
         <div className="container mx-auto px-6">
-          <h2 className="lg:text-3xl text-3xl font-bold text-center mb-20 text-[#674636] uppercase">
+          <h2 className="lg:text-3xl text-2xl font-bold font-mont text-center mb-20 text-[#674636] uppercase">
             What Our Clients Say
           </h2>
-          <div className=" w-10/12 mx-auto grid grid-cols-2 gap-20">
+          <div className="flex flex-col gap-10  w-10/12 mx-auto lg:grid lg:grid-cols-2 lg:gap-20">
             {testimonials.map((testimonial) => (
               <div
                 key={testimonial.id}
                 className="  p-8 shadow-xl bg-[#fff8e8]"
               >
-                <div className=" flex">
+                <div className=" gap-7 flex flex-col lg:flex-row">
                   <img
                     src={testimonial.photo}
                     alt={testimonial.name}
@@ -195,12 +195,12 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <div className="text-center   py-28">
-          <h2 className="text-4xl text-[#674636] font-bold uppercase mb-8">
+      {/* Call to Action */} 
+      <div className=" font-mont w-10/12 mx-auto   py-28">
+          <h2 className="text-2xl lg:text-3xl text-[#674636] font-bold uppercase mb-8">
             Ready to Create Something Beautiful?
           </h2>
-          <Link to='/allitems'><button className='btn px-10 text-white bg-[#795757]'>Explore Our Works</button></Link>
+          <Link to='/allitems'><button className='btn px-10  text-white bg-[#795757]'>Explore Our Works</button></Link>
           
         </div>
 

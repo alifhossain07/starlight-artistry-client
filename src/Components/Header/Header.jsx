@@ -52,7 +52,7 @@ const Header = () => {
           Items <IoMdArrowDropdown />
         </button>
         {isDropdownOpen && (
-          <ul className="absolute bg-[#fff8e8] rounded-none mt-14 w-52  text-[#674636] shadow-lg z-50 p-2">
+          <ul className="absolute bg-[#e7ecdd] rounded-none lg:mt-14 mt-0 w-52  text-[#674636] shadow-lg z-50 p-2">
             <li className="font-bold mr-3">
               <NavLink to="/allitems">All Items</NavLink>
             </li>
@@ -70,7 +70,7 @@ const Header = () => {
 
   return (
     <div>
-      <div className="navbar bg-[#705656] p-2 shadow-lg z-10">
+      <div className="navbar bg-[#aab396] p-2 shadow-lg z-10">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -91,14 +91,14 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-[#fff8e8] rounded-box z-50 mt-20 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-[#fff8e8] rounded-box z-50 mt-5 w-52 p-2 shadow"
             >
               {navLinks}
             </ul>
           </div>
           <div>
             <h1 className="font-bold lg:hidden text-gray-200">
-              CreativeEvent Solutions
+              Starlight Artistry
             </h1>
             <img
               className="w-7/12 ml-3 h-10/12 mt-1 hidden lg:block"
@@ -109,7 +109,7 @@ const Header = () => {
         </div>
 
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal text-gray-200 uppercase px-1">
+          <ul className="menu menu-horizontal text-gray-100 uppercase px-1">
             {navLinks}
           </ul>
         </div>
@@ -119,13 +119,13 @@ const Header = () => {
           {user ? (
             <button
               onClick={handleLogOut}
-              className="text-sm font-semibold bg-white px-2 py-1 lg:py-2 rounded-xl lg:px-10 hover:bg-sky-500 hover:text-gray-200 hover:border hover:border-white duration-200 mr-4"
+              className="lg:text-sm text-xs font-semibold bg-[#795757]  duration-400 hover:bg-[#ad7e7e] text-white px-2 py-1 lg:py-2 rounded-md lg:px-10  hover:text-gray-200 hover:border hover:border-white duration-200 mr-4"
             >
               Sign Out
             </button>
           ) : (
             <Link to="/login">
-              <button className="text-sm font-semibold bg-white px-2 py-1 lg:py-2 rounded-xl lg:px-10 hover:bg-blue-500 mr-4">
+              <button className="text-xs  lg:text-sm font-semibold  text-white px-2 py-1 lg:py-2 rounded-md lg:px-10 bg-[#795757]  duration-400 hover:bg-[#ad7e7e] mr-4">
                 Login
               </button>
             </Link>

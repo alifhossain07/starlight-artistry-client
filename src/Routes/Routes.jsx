@@ -8,6 +8,7 @@ import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
 import AddItems from "../Components/addItems/addItems";
 import UpdateItems from "../Components/UpdateItems/UpdateItems";
+import MyItems from "../Components/MyItems/MyItems";
 
 const routes = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const routes = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/myitems",
+        element: <MyItems></MyItems>
       },
       {
         path: "/register",

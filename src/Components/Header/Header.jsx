@@ -1,18 +1,36 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-
-  // Log user data to check if photoURL is available
-  console.log(user);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const handleLogOut = () => {
     logOut()
       .then(() => console.log("User Log Out"))
       .catch((error) => console.log(error));
   };
+
+  // Toggle dropdown
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const navLinks = (
     <>
@@ -25,18 +43,34 @@ const Header = () => {
       <li className="font-bold mr-3">
         <NavLink to="/contactus">Contact Us</NavLink>
       </li>
-      <li className="font-bold mr-3">
-        <NavLink to="/allitems">All Items</NavLink>
-      </li>
-      <li className="font-bold mr-3">
-        <NavLink to="/additems">Add Items</NavLink>
+     
+      <li ref={dropdownRef} className="relative">
+        <button
+          className="font-bold uppercase cursor-pointer"
+          onClick={toggleDropdown}
+        >
+          Items <IoMdArrowDropdown />
+        </button>
+        {isDropdownOpen && (
+          <ul className="absolute bg-[#fff8e8] rounded-none mt-14 w-52  text-[#674636] shadow-lg z-50 p-2">
+            <li className="font-bold mr-3">
+              <NavLink to="/allitems">All Items</NavLink>
+            </li>
+            <li className="font-bold mr-3">
+              <NavLink to="/additems">Add Items</NavLink>
+            </li>
+            <li className="font-bold mr-3">
+              <NavLink to="/myitems">My Items</NavLink>
+            </li>
+          </ul>
+        )}
       </li>
     </>
   );
 
   return (
     <div>
-      <div className="navbar bg-[#a67f7f] p-1 shadow-lg">
+      <div className="navbar bg-[#705656] p-2 shadow-lg z-10">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -57,7 +91,7 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-sky-200 rounded-box z-[1] mt-6 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-[#fff8e8] rounded-box z-50 mt-20 w-52 p-2 shadow"
             >
               {navLinks}
             </ul>
@@ -83,14 +117,12 @@ const Header = () => {
         {/* Avatar and Login/Logout Button */}
         <div className="navbar-end flex">
           {user ? (
-            <>
-              <button
-                onClick={handleLogOut}
-                className="text-sm font-semibold bg-white px-2 py-1 lg:py-2 rounded-xl lg:px-10 hover:bg-sky-500 hover:text-gray-200 hover:border hover:border-white duration-200 mr-4"
-              >
-                Sign Out
-              </button>
-            </>
+            <button
+              onClick={handleLogOut}
+              className="text-sm font-semibold bg-white px-2 py-1 lg:py-2 rounded-xl lg:px-10 hover:bg-sky-500 hover:text-gray-200 hover:border hover:border-white duration-200 mr-4"
+            >
+              Sign Out
+            </button>
           ) : (
             <Link to="/login">
               <button className="text-sm font-semibold bg-white px-2 py-1 lg:py-2 rounded-xl lg:px-10 hover:bg-blue-500 mr-4">

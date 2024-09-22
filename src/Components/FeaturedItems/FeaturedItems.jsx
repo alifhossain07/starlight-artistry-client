@@ -15,6 +15,7 @@ const FeaturedItems = ({items}) => {
         <p className="lg:text-xl mx-auto lg:w-full w-10/12 text-lg font-lora text-[#928360]">
           Here you can explore the Most Demanded Craft Items
         </p>
+        
       </div>
       {/* Added Cards */}
       <div className="w-10/12 flex flex-col gap-10 lg:grid lg:grid-cols-3 mx-auto  mt-10">

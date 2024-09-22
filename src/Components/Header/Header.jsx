@@ -36,7 +36,7 @@ const Header = () => {
 
   return (
     <div>
-      <div className="navbar bg-gradient-to-r from-[#FFF0D1] to-[#795757] p-1 shadow-lg">
+      <div className="navbar bg-[#a67f7f] p-1 shadow-lg">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

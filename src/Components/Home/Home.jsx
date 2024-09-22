@@ -3,6 +3,10 @@ import Banner from '../Banner/Banner';
 import FeaturedItems from '../FeaturedItems/FeaturedItems';
 import { useLoaderData } from 'react-router-dom';
 import Categories from '../Categories/Categories';
+import Testimonial from '../Testimonial/Testimonial';
+import Faq from '../FAQ/Faq';
+
+
 
 
 
@@ -17,6 +21,9 @@ const Home = () => {
        <Banner></Banner>
        <FeaturedItems items={items}></FeaturedItems>
        <Categories></Categories>
+       <Testimonial></Testimonial>
+       <Faq></Faq>
+    
         
 
         </div>

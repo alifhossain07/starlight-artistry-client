@@ -23,16 +23,16 @@ const Testimonial = () => {
         <div>
             <section className="py-20 bg-white  mx-auto   ">
         <div className="container mx-auto px-6">
-          <h2 className="lg:text-3xl text-3xl font-bold text-center mb-20 text-[#674636] uppercase">
+          <h2 className="lg:text-3xl font-mont text-2xl font-bold text-center mb-20 text-[#674636] uppercase">
             What Our Clients Say
           </h2>
-          <div className=" w-10/12 mx-auto grid grid-cols-2 gap-20">
+          <div className=" w-10/12 mx-auto flex flex-col lg:grid gap-10 lg:grid-cols-2 lg:gap-20">
             {testimonials.map((testimonial) => (
               <div
                 key={testimonial.id}
                 className="  p-8 shadow-xl bg-[#fff8e8]"
               >
-                <div className=" flex">
+                <div className=" flex flex-col gap-5 lg:flex-row">
                   <img
                     src={testimonial.photo}
                     alt={testimonial.name}

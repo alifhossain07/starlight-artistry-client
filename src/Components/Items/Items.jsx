@@ -67,14 +67,14 @@ const Items = ({ item, allItems, setItems }) => {
 
   return (
     <div>
-      <div className="card font-mont rounded-md bg-[#fff8e8] w-80 mx-auto h-5/6 shadow-xl">
+      <div className="card font-mont rounded-md bg-[#fff8e8] lg:w-80 w-11/12 mx-auto h-2/6 lg:h-5/6 shadow-xl">
         <figure>
-          <img className="h-80 w-full" src={photoURL} alt={name} />
+          <img className="lg:h-80 h-52 w-full" src={photoURL} alt={name} />
         </figure>
         <div className="card-body space-y-2">
-          <h2 className="card-title text-2xl">{name}</h2>
-          <p className="text-xl font-lora">{category}</p>
-          <p className="text-xl">
+          <h2 className="card-title  text-xl lg:text-2xl">{name}</h2>
+          <p className="text-lg font-lora">{category}</p>
+          <p className="text-lg">
             <strong>${price}</strong>
           </p>
           <div className="w-full">

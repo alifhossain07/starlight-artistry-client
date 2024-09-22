@@ -5,25 +5,26 @@ const Footer = () => {
   return (
     <div>
       <footer className=" bg-[#a67f7f] text-white font-mont rounded p-10">
-        <div className="flex py-16 justify-between w-11/12 mx-auto">
-          <div className="text-left pl-20">
-            
-              <img className="w-1/2 " src="https://i.ibb.co.com/GJpR2mj/logo1.png" alt="" />
-              <p className=" text-xl -ml-10">
-                
-                Providing Handmade Crafts Since 1992
-              </p>
-            
+        <div className="flex flex-col lg:flex-row py-16 justify-between w-11/12 mx-auto">
+          <div className="text-left lg:pl-20">
+            <img
+              className="lg:w-1/2 "
+              src="https://i.ibb.co.com/GJpR2mj/logo1.png"
+              alt=""
+            />
+            <p className=" text-xl lg:text-left text-center mt-7 lg:mt-0 lg:-ml-10">
+              Providing Handmade Crafts Since 1992
+            </p>
           </div>
-          <div className=" w-1/2 footer footer-center" >
+          <div className=" lg:w-1/2 mt-20 lg:mt-0 footer footer-center">
             <nav className="grid text-xl font-semibold grid-flow-col gap-20">
-            <Link to='/about'><a className="link link-hover">About us</a></Link>
-            <Link to='/contactus'> <a className="link link-hover">Contact</a></Link>
-            
-              
-             
-             
-          
+              <Link to="/about">
+                <a className="link link-hover">About us</a>
+              </Link>
+              <Link to="/contactus">
+                {" "}
+                <a className="link link-hover">Contact</a>
+              </Link>
             </nav>
             <nav>
               <div className="grid grid-flow-col gap-8">
@@ -65,7 +66,7 @@ const Footer = () => {
             <aside>
               <p className="text-lg">
                 Copyright © {new Date().getFullYear()} - All right reserved by
-                ACME Industries Ltd
+               Alif Hossain
               </p>
             </aside>
           </div>

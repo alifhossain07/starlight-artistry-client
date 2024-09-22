@@ -60,3 +60,127 @@ html {
 .swiper-pagination .swiper-pagination-bullet-active {
   background-color: rgb(255, 136, 0);
 }
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Montserrat:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-mont {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-lora {
+  font-family: "Lora", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.swiper_container {
+  height: 30rem;
+  padding: 3rem 0;
+}
+
+.swiper-slide {
+  width: 15rem !important;
+  height: 28rem !important;
+}
+
+.swiper-slide img {
+  width: 24rem !important;
+  height: 24rem !important;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  margin-bottom: 2rem;
+}
+
+.slider-controler {
+  position: relative;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-controler .swiper-button-prev,
+.slider-controler .swiper-button-next {
+  width: 17rem;
+  height: 4rem;
+}
+
+.slider-controler .swiper-pagination {
+  bottom: 3rem;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+  width: 0.8rem;
+  height: 0.8rem;
+  
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  background-color: rgb(255, 136, 0);
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .swiper_container {
+    height: 25rem;
+    padding: 2rem 0;
+  }
+
+  .swiper-slide {
+    width: 12rem !important;
+    height: 22rem !important;
+  }
+
+  .swiper-slide img {
+    width: 20rem !important;
+    height: 20rem !important;
+    border-radius: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .swiper_container {
+    height: 20rem;
+    padding: 1.5rem 0;
+  }
+
+  .swiper-slide {
+    width: 10rem !important;
+    height: 18rem !important;
+  }
+
+  .swiper-slide img {
+    width: 16rem !important;
+    height: 16rem !important;
+    border-radius: 0.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .swiper_container {
+    height: 18rem;
+    padding: 1rem 0;
+  }
+
+  .swiper-slide {
+    width: 8rem !important;
+    height: 16rem !important;
+  }
+
+  .swiper-slide img {
+    width: 14rem !important;
+    height: 14rem !important;
+    border-radius: 0.6rem;
+  }
+
+  .slider-controler .swiper-button-prev,
+  .slider-controler .swiper-button-next {
+    width: 12rem;
+    height: 3rem;
+  }
+}

@@ -7,12 +7,12 @@ const FeaturedItems = ({items}) => {
     <div className="mt-20">
       <div className="text-center space-y-3">
         <h1
-          className="text-3xl text-[#674636]
+          className="lg:text-3xl text-2xl text-[#674636]
  font-mont font-bold  "
         >
           Featured Items
         </h1>
-        <p className="text-xl font-lora text-[#928360]">
+        <p className="lg:text-xl mx-auto lg:w-full w-10/12 text-lg font-lora text-[#928360]">
           Here you can explore the Most Demanded Craft Items
         </p>
       </div>

@@ -19,7 +19,7 @@ const FeaturedItems = ({items}) => {
       {/* Added Cards */}
       <div className="w-10/12 flex flex-col gap-10 lg:grid lg:grid-cols-3 mx-auto  mt-10">
       {
-        items.slice(0,6).map(item => <Items item={item}></Items>)
+        items.slice(0,6).map(item => <Items key={item._id} item={item}></Items>)
       }
 
       </div>

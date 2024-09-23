@@ -18,7 +18,7 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/craftItem'),
+        loader: () => fetch("http://localhost:5000/craftItem"),
       },
       {
         path: "/about",
@@ -31,12 +31,12 @@ const routes = createBrowserRouter([
       {
         path: "/allitems",
         element: <All_items></All_items>,
-        loader: () => fetch('http://localhost:5000/craftItem'),
+        loader: () => fetch("http://localhost:5000/craftItem"),
       },
       {
         path: "/all-items/:category",
         element: <All_items></All_items>,
-        loader: () => fetch('http://localhost:5000/craftItem'),
+        loader: () => fetch("http://localhost:5000/craftItem"),
       },
       {
         path: "/login",
@@ -44,21 +44,21 @@ const routes = createBrowserRouter([
       },
       {
         path: "/myitems",
-        element: <MyItems></MyItems>
+        element: <MyItems></MyItems>,
       },
       {
         path: "/register",
         element: <Register></Register>,
       },
       {
-        path:"additems",
-        element:<AddItems></AddItems>,
+        path: "additems",
+        element: <AddItems></AddItems>,
       },
       {
-        path:"updateitems/:id",
+        path: "updateitems/:id",
         element: <UpdateItems></UpdateItems>,
-        loader: ({params}) => fetch(`http://localhost:5000/craftItem/${params.id}`)
-      }
+        loader: ({ params }) => fetch(`http://localhost:5000/craftItem/${params.id}`),
+      },
     ],
   },
 ]);

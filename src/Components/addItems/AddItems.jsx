@@ -32,7 +32,7 @@ const AddItems = () => {
     console.log(CraftInfo);
 
     // send data To the Server
-    fetch("https://starlight-artistry-server-mrwafwm7t.vercel.app/craftItem", {
+    fetch("https://starlight-artistry-server-ph9anp8qo.vercel.app/craftItem", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

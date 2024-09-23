@@ -18,25 +18,27 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/craftItem"),
+        loader: () => fetch("https://starlight-artistry-server-alternate-kkhh.vercel.app/crafts",)
+
+        
       },
       {
         path: "/about",
         element: <AboutUs></AboutUs>,
       },
       {
-        path: "contactus",
+        path: "/contactus",
         element: <ContactUs></ContactUs>,
       },
       {
         path: "/allitems",
         element: <All_items></All_items>,
-        loader: () => fetch("http://localhost:5000/craftItem"),
+        loader: () => fetch("https://starlight-artistry-server-alternate-kkhh.vercel.app/crafts"),
       },
       {
         path: "/all-items/:category",
         element: <All_items></All_items>,
-        loader: () => fetch("http://localhost:5000/craftItem"),
+        loader: () => fetch("https://starlight-artistry-server-alternate-kkhh.vercel.app/crafts")
       },
       {
         path: "/login",
@@ -57,7 +59,7 @@ const routes = createBrowserRouter([
       {
         path: "updateitems/:id",
         element: <UpdateItems></UpdateItems>,
-        loader: ({ params }) => fetch(`http://localhost:5000/craftItem/${params.id}`),
+        loader: ({ params }) => fetch(`https://starlight-artistry-server-alternate-kkhh.vercel.app/crafts/${params.id}`),
       },
     ],
   },

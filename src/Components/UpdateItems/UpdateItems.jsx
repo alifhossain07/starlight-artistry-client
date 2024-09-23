@@ -36,7 +36,7 @@ const UpdateItems = () => {
     console.log(CraftInfo);
 
     // send data To the Server
-    fetch(`http://localhost:5000/craftItem/${_id}`, {
+    fetch(`https://starlight-artistry-server-alternate-kkhh.vercel.app/crafts/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

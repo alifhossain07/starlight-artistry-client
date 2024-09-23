@@ -20,7 +20,7 @@ const Items = ({ item, allItems, setItems }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/craftItem/${_id}`, {
+        fetch(`https://starlight-artistry-server-alternate-kkhh.vercel.app/crafts/${_id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
